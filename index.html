@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabiotech - Electrónicos con Estilo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Fabiotech</div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div id="particles-js"></div>
+    <div class="hero-text">
+      <h1>Bienvenido a Fabiotech</h1>
+      <p>Explora los mejores productos de tecnología</p>
+    </div>
+  </header>
+
+  <section class="catalogo" id="catalogo">
+    <h2>Catálogo</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://i.imgur.com/VW7btxL.png" alt="iPhone 14">
+        <h3>iPhone 14</h3>
+        <ul>
+          <li>Pantalla Super Retina XDR</li>
+          <li>Cámara Dual 12MP</li>
+          <li>Chip A15 Bionic</li>
+        </ul>
+        <p class="precio">S/ 3599</p>
+        <button class="ver-detalle" data-producto="iphone14">Comprar</button>
+      </div>
+
+      <div class="producto">
+        <img src="https://i.imgur.com/nKSpUXx.png" alt="AirPods Pro">
+        <h3>AirPods Pro</h3>
+        <ul>
+          <li>Cancelación Activa de Ruido</li>
+          <li>Audio Espacial</li>
+          <li>Resistentes al Agua</li>
+        </ul>
+        <p class="precio">S/ 899</p>
+        <button class="ver-detalle" data-producto="airpods">Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="detalle-producto" id="detalle-producto" style="display: none;">
+    <div class="detalle-contenido">
+      <img id="detalle-img" src="" alt="">
+      <div class="detalle-info">
+        <h2 id="detalle-nombre"></h2>
+        <ul id="detalle-caracteristicas"></ul>
+        <p id="detalle-precio" class="precio"></p>
+        <button onclick="cerrarDetalle()">Cerrar</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <p>Contacto: fabio@fabiotech.com | WhatsApp: +51 912 345 678</p>
+    <p>&copy; 2025 Fabiotech</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        color: { value: "#ffcc00" },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
