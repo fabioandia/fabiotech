@@ -3,106 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fabiotech - Electrónicos con Estilo</title>
+  <title>Fabiotech - Tecnología con Identidad</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <meta name="google-site-verification" content="iV1OSukQHIg0MB4aYIb6SnLqkxjNFvQ2gW1zNWIJeg4" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Fabiotech</div>
-    <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#catalogo">Catálogo</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
 
-  <header class="hero" id="inicio">
-    <div id="particles-js"></div>
-    <div class="hero-text">
-      <h1>Bienvenido a Fabiotech</h1>
-      <p>Explora los mejores productos de tecnología</p>
-    </div>
-  </header>
+  <!-- Intro -->
+  <div class="intro">
+    <h1 class="intro-title">Fabiotech</h1>
+    <p class="intro-subtitle">Tecnología con Identidad</p>
+    <p class="intro-soon">Muy pronto, lo mejor está por llegar</p>
+  </div>
 
-  <section class="catalogo" id="catalogo">
-    <h2>Catálogo</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="https://i.imgur.com/VW7btxL.png" alt="iPhone 14">
-        <h3>iPhone 14</h3>
-        <ul>
-          <li>Pantalla Super Retina XDR</li>
-          <li>Cámara Dual 12MP</li>
-          <li>Chip A15 Bionic</li>
-        </ul>
-        <p class="precio">S/ 3599</p>
-        <button class="ver-detalle" data-producto="iphone14">Comprar</button>
+  <!-- Contenido oculto hasta después de la intro -->
+  <div class="hidden">
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="logo">Fabiotech</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#anuncio">Anuncio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- INICIO -->
+    <header class="hero" id="inicio">
+      <div id="particles-js"></div>
+      <div class="hero-text">
+        <h1>Bienvenido a Fabiotech</h1>
+        <p>Explora la tecnología con identidad</p>
       </div>
+    </header>
 
-      <div class="producto">
-        <img src="https://i.imgur.com/nKSpUXx.png" alt="AirPods Pro">
-        <h3>AirPods Pro</h3>
-        <ul>
-          <li>Cancelación Activa de Ruido</li>
-          <li>Audio Espacial</li>
-          <li>Resistentes al Agua</li>
-        </ul>
-        <p class="precio">S/ 899</p>
-        <button class="ver-detalle" data-producto="airpods">Comprar</button>
+    <!-- ANUNCIO -->
+    <section class="anuncio" id="anuncio">
+      <h2>¡Pronto lo mejor está por llegar!</h2>
+      <p>Nos estamos preparando para ofrecerte los mejores productos tecnológicos del mercado. ¡Espéralo!</p>
+    </section>
+
+    <!-- CONTACTO -->
+    <footer id="contacto">
+      <h2>Contacto</h2>
+      <p>CEO: Fabio Andia</p>
+      <p>Email: contacto@fabiotech.com</p>
+      <p>WhatsApp: +51 943 872 589</p>
+      <div class="redes">
+        <a href="https://instagram.com/fabio.7812" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
       </div>
-    </div>
-  </section>
-
-  <section class="detalle-producto" id="detalle-producto" style="display: none;">
-    <div class="detalle-contenido">
-      <img id="detalle-img" src="" alt="">
-      <div class="detalle-info">
-        <h2 id="detalle-nombre"></h2>
-        <ul id="detalle-caracteristicas"></ul>
-        <p id="detalle-precio" class="precio"></p>
-        <button onclick="cerrarDetalle()">Cerrar</button>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contacto">
-    <p>Contacto: fabio@fabiotech.com | WhatsApp: +51 912 345 678</p>
-    <p>&copy; 2025 Fabiotech</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80 },
-        size: { value: 3 },
-        color: { value: "#ffcc00" },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: { enable: true, speed: 2 }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
-        },
-        modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
+      <p>&copy; 2025 Fabiotech</p>
+    </footer>
+  </div>
 </body>
 </html>

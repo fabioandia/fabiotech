@@ -1,129 +1,177 @@
-body {
+* {
   margin: 0;
-  font-family: 'Outfit', sans-serif;
-  background-color: #000;
-  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* Intro */
+.intro {
+  height: 100vh;
+  background: #000;
+  color: #ffcc00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 3s forwards 2.5s;
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.intro-subtitle {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.intro-soon {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Oculto al inicio */
+.hidden {
+  display: none;
+}
+
+/* Aparece con fade in */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* NAV */
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #111;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  align-items: center;
+  z-index: 100;
 }
 
-.navbar .logo {
+.logo {
+  font-size: 1.8rem;
   font-weight: 800;
   color: #ffcc00;
-  font-size: 1.5rem;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
-.nav-links li a {
-  color: #fff;
+.nav-links a {
   text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* HERO */
 .hero {
   height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: radial-gradient(circle, #1a1a1a, #000);
-  position: relative;
   overflow: hidden;
 }
 
 #particles-js {
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100%;
   z-index: 0;
 }
 
 .hero-text {
+  position: relative;
   z-index: 1;
 }
 
-.catalogo {
-  padding: 4rem 2rem;
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* ANUNCIO */
+.anuncio {
+  padding: 80px 20px;
+  background: #111;
   text-align: center;
 }
 
-.productos {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.producto {
-  background: #111;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 280px;
-  transition: transform 0.3s;
-}
-
-.producto:hover {
-  transform: scale(1.05);
-}
-
-.producto img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.precio {
+.anuncio h2 {
   color: #ffcc00;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
-button {
-  background: #ffcc00;
-  color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  border-radius: 5px;
+.anuncio p {
+  color: #ddd;
+  font-size: 1.1rem;
 }
 
-.detalle-producto {
-  padding: 3rem;
-  background: #111;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 20;
-  overflow-y: auto;
+/* FOOTER */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
 }
 
-.detalle-contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+footer .redes {
+  margin: 15px 0;
 }
 
-.detalle-contenido img {
-  width: 300px;
-  border-radius: 10px;
+footer .redes a img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
 }
 
-.detalle-info {
-  max-width: 500px;
-  text-align: left;
-  margin-top: 2rem;
+footer .redes a img:hover {
+  transform: scale(1.2);
 }
